@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Prabuddha</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/mycss.css" rel="stylesheet">
+    <!-- <link href="css/stylish-portfolio.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular-cookies.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Coustard" rel="stylesheet">
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="MyCtrl.js"></script>
+
+<style>
+  .typewriter {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+  .typewriter:nth-child(1){
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+  .typewriter:nth-child(2){
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+  .typewriter:nth-child(3){
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing  3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+</style>
+
+
+
+
+</head>
+
+<body id="page-top" ng-app="Prabuddha" ng-controller="vm" >
+    <!-- Navigation -->
+      <a class="menu-toggle" href="#" id="menu_tag" style="display: inline-block;" >
+      <i class="fas fa-bars"></i>
+    </a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a class="js-scroll-trigger" href="#page-top">LOGOUT</a>
+            </li><br><br><br>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#page-top" >Home</a>
+            </li><br>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#about">About</a>
+            </li><br>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#portfolio">Events</a>
+            </li><br>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#services">Schedule & Rules</a>
+            </li><br>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#services">Prabuddha 1.0</a>
+            </li><br>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#contact">Sponsors</a>
+            </li><br>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#contact">Contact</a>
+            </li><br><br><br>
+            <li style="padding-top: 110px;">
+              <img src="img/master-logo-file.png" width="250">
+            </li>
+        </ul>
+    </nav>
+    <!-- Header -->
+    <div class="masthead " style="background-attachment: fixed;">
+    <header style="height: 800px;">
+        <div class="container text-center">
+            <!-- <h1 class="animated fadeInDown" style="color:white; padding-top:100px;font-family: 'Coustard', serif;text-shadow: 0px 15px 5px rgba(0,0,0,0.1),
+                 10px 20px 5px rgba(249,150,57,0.05),
+                 -10px 20px 5px rgba(249,150,57,0.05);"><img src="img/BUDDHALOGO.png" width="150" style="display:inline-block;vertical-align: top;">PRABUDDHA</h1><br><br> -->
+                 <img class="animated fadeInDown" src="img/prabu.png" width="800" height="300"><br>
+          
+            <div class="typewriter">
+              <br>
+            <h4 class="lead mb-1" style="color:white;size:1.2em; font:monospace;">"PRABUDDHA, as the name goes is the one who is
+                            awakened. Self aware and awoke. We at
+                            Quizzinga have
+                            </h4>
+                            <h4 class="lead mb-1" style="color:white;size:1.2em; font:monospace;">
+                             been true to these words for over
+                            a decade. And our continuous
+                             dedication for</h4> <h4 class="lead mb-1" style="color:white;size:1.2em; font:monospace;">our work, hard work and never
+                            say never attitude
+                            
+                            has escaled us in the most</h4> <h4 class="lead mb-1" style="color:white;size:1.2em; font:monospace;"> coveted
+                            Quizzing Club in North India"</h4>
+        </h4>
+      </div><br><br>
+      <!-- </div>   -->
+              <button class="btn btn-primary btn-xl js-scroll-trigger heading" ng-hide="hidels" id="myBtn" >LOG IN / SIGN UP</button>      
+              <a class="btn btn-primary btn-xl js-scroll-trigger heading" ng-show="hidels" href="#portfolio">LETS PLAY!!</a>      
+        </div>
+        <div class="overlay"></div>
+    </header>
+    <!-- About -->
+    <section class="content-section" id="about" style="height: 600px;">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                  <!-- <img src="img/p.jpg"> -->
+                    <h2 class="animated bounceIn infinite slow" style="color:white;">ABOUT<span style="color:rgba(249, 131, 51,0.9);"> QUIZZINGA</span></h2><br>
+                    
+                    <p class="lead mb-5 " style="color:white;">Quizzinga!- The Quiz club of KIET takes pride in
+                                          being one of the most proactive and popular
+                                          clubs among the students of KIET, Ghaziabad.
+                                          Established at the backdrop of a highly successful
+                                          event ‘TechCheck’ , for the college’s tech fest in
+                                          2014, the club has grown tremendously and has
+                                          gathered a huge fan base among the students.
+                                          The main objective of this club is to build the
+                                          quizzing culture among students and to
+                                          encourage their interest in general knowledge
+                                          awareness and to develop the curiosity of
+                                          knowing things in them which is the
+                                          characteristic feature of connecting students with the quizzes. To implement
+                                          this objective,
+
+                                          this club organizes different quizzing events
+                                          throughout the year on different topics like
+                                          History &amp; Politics, Entertainment, General,
+                                          Literature, Sports. In 2016, the club had
+                                          conducted its first Inter-college quizzing fest
+                                          Prabuddha. Each of our quizzes till now had an
+                                          active participation of students and we at
+                                          Quizzinga encourage their participation with
+                                          certificates and exciting prizes to the winners
+                                          and thus implementing our objective.
+                                        </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services -->
+    <!-- Callout -->
+   <!--  <section class="callout">
+        <div class="container text-center">
+            <h2 class="mx-auto mb-5">Welcome to
+          <em>your</em>
+          next website!</h2>
+            <a class="btn btn-primary btn-xl" href="https://startbootstrap.com/template-overviews/stylish-portfolio/">Download Now!</a>
+        </div>
+    </section> -->
+    <!-- Portfolio -->
+    <section class="content-section" id="portfolio" style="height: 1000px;">
+        <div class="container">
+            <div class="content-section-heading text-center">
+                <h3 class="text-secondary mb-0">Portfolio</h3>
+                <h2 class="mb-5">EVENTS</h2>
+            </div>
+            <div class="row no-gutters" id="port">
+                <div class="col-lg-6" ng-click="Event_Description(1);">
+                    <a class="portfolio-item" href="#">
+              <span class="caption">
+                <span class="caption-content">
+                  <h2>HISTORY & POLITICS QUIZ</h2>
+                  <span   ng-show="login_data.events.history.event_status== 'NOT REGISTERED'" >REGISTER</span>
+                  <span   ng-show="login_data.events.history.event_status== 'REGISTERED'">REGISTERED</span>
+                  <span ng-if="login_data.events.history.event_status== 'APPROVED'">
+                    <span  ng-if="login_data.events.history.event_status== 'NOT PAID'">PAY</span>
+                    <span   ng-if="login_data.events.history.event_status== 'NOT PAID'">MORE DETAILS</span>
+                  </span>
+                </span>
+              </span>
+              <img class="img-fluid" src="img/portfolio-1.jpg" alt="">
+            </a>
+                </div>
+                <div class="col-lg-6" ng-click="Event_Description(2);">
+                    <a class="portfolio-item" href="#">
+              <span class="caption">
+                <span class="caption-content">
+                  <h2>SPORT QUIZ</h2>
+                  <span   ng-if="login_data.events.sports.event_status== 'NOT REGISTERED'">REGISTER</span>
+                  <span   ng-if="login_data.events.sports.event_status== 'REGISTERED'">REGISTERED</span>
+                  <span ng-if="login_data.events.sports.event_status== 'APPROVED'">
+                    <span   ng-if="login_data.events.sports.event_status== 'NOT PAID'">PAY</span>
+                    <span   ng-if="login_data.events.sports.event_status== 'NOT PAID'">MORE DETAILS</span>
+                  </span>     
+                 </span>
+              </span>
+              <img class="img-fluid" src="img/portfolio-2.jpg" alt="">
+            </a>
+                </div>
+                <div class="col-lg-6" ng-click="Event_Description(3);">
+                    <a class="portfolio-item" href="#">
+              <span class="caption">
+                <span class="caption-content">
+                  <h2>ENTERTAINMENT QUIZ</h2>
+                  <span   ng-if="login_data.events.entertainment.event_status== 'NOT REGISTERED'">REGISTER</span>
+                  <span  ng-if="login_data.events.entertainment.event_status== 'REGISTERED'">REGISTERED</span>
+                  <span ng-if="login_data.events.entertainment.event_status== 'APPROVED'">
+                    <span   ng-if="login_data.events.entertainment.event_status== 'NOT PAID'">PAY</span>
+                    <span   ng-if="login_data.events.entertainment.event_status== 'NOT PAID'">MORE DETAILS</span>
+                  </span> 
+                </span>
+              </span>
+              <img class="img-fluid" src="img/portfolio-3.jpg" alt="">
+            </a>
+                </div>
+                <div class="col-lg-6" ng-click="Event_Description(4 );">
+                    <a class="portfolio-item" href="#">
+              <span class="caption">
+                <span class="caption-content">
+                  <h2>GENERAL QUIZ</h2>
+                  <span   ng-if="login_data.events.general.event_status== 'NOT REGISTERED'">REGISTER</span>
+                  <span   ng-if="login_data.events.general.event_status== 'REGISTERED'">REGISTERED</span>
+                  <span ng-if="login_data.events.general.event_status== 'APPROVED'">
+                    <span  ng-if="login_data.events.general.event_status== 'NOT PAID'">PAY</span>
+                    <span   ng-if="login_data.events.general.event_status== 'NOT PAID'">MORE DETAILS</span>
+                  </span>                
+                </span>
+              </span>
+              <img class="img-fluid" src="img/portfolio-4.PNG" alt="">
+            </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content-section  text-white text-center" style="height: 1000px;" id="services">
+        <div class="container">
+            <div class="content-section">
+                <h2 class="text-secondary mb-0">SCHEDULE AND RULES</h3>
+                <h3 class="mb-5">Schedule:-</h2>
+            </div>
+            <div class="typewriter">
+            <ul>
+              <li>History and Politics</li>
+              <li>Sports Quiz</li>
+              <li>Entertainment Quiz</li>
+              <li>General Quiz</li>
+            </ul>
+          </div>
+        </div>
+    </section>
+    <!-- Call to Action -->
+   <!--  <section class="content-section bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">The buttons below are impossible to resist...</h2>
+            <a href="#" class="btn btn-xl btn-light mr-4">Click Me!</a>
+            <a href="#" class="btn btn-xl btn-dark">Look at Me!</a>
+        </div>
+    </section> -->
+    <!-- Map -->
+    <section class="content-section bg-primary text-white text-center" style="height: 1000px;" id="services">
+        <div class="container">
+            <div class="content-section-heading">
+                <h3 class="text-secondary mb-0"></h3>
+                <h2 class="mb-5">What We Offer</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                    <span class="service-icon rounded-circle mx-auto mb-3">
+              <i class="icon-screen-smartphone"></i>
+            </span>
+                    <h4>
+              <strong>Responsive</strong>
+            </h4>
+                    <p class="text-faded mb-0">Looks great on any screen size!</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                    <span class="service-icon rounded-circle mx-auto mb-3">
+              <i class="icon-pencil"></i>
+            </span>
+                    <h4>
+              <strong>Redesigned</strong>
+            </h4>
+                    <p class="text-faded mb-0">Freshly redesigned for Bootstrap 4.</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                    <span class="service-icon rounded-circle mx-auto mb-3">
+              <i class="icon-like"></i>
+            </span>
+                    <h4>
+              <strong>Favorited</strong>
+            </h4>
+                    <p class="text-faded mb-0">Millions of users
+                        <i class="fas fa-heart"></i>
+                        Start Bootstrap!</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <span class="service-icon rounded-circle mx-auto mb-3">
+              <i class="icon-mustache"></i>
+            </span>
+                    <h4>
+              <strong>Question</strong>
+            </h4>
+                    <p class="text-faded mb-0">I mustache you a question...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <!-- //////////////////////////////////////////////////////////////////////jcjd//////////////////////////////////////////////////////////////// -->
+    <div class="modal fade w-60" id="Description" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content" >
+                <button type="button" class="close" style="text-align: right;padding-right: 10px;" data-dismiss="modal">&times;</button><br>
+                    <h4 class="modal-title"></h4>
+                    <div class="modal-body" id="team" ng-show="show_login">
+                      <h2 style="text-align: center;">{{head}}{{}}</h2><br> 
+                      <div class="container">
+                        <span>{{about}}</span><br>
+                         <!-- <a href="#" class="btn btn-xl btn-light mr-4" ng-click="register()">REGISTER</a> -->
+                        <form name="team" ng-hide="action">
+                            <div class="form-group">
+                                <label for="email">Caption</label>
+                                <input type="text" ng-model="caption" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd">TEAM MATE</label>
+                                <input type="text" ng-model = "team" class="form-control" >
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox"> Remember me</label>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-6">
+                              </div>
+                              <div class="col-md-6">
+                                <button style="text-align:center;"  data-dismiss="modal" type="submit" ng-click="register(team,event);" class="btn btn-primary js-scroll-trigger">Submit</button>
+                              </div>
+                            </div>
+                        </form>
+                        <span ng-show="action">
+                          <p>TEAM MEMBERS</p>
+                        </span>
+                      </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+      <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// --> 
+      <div class="modal fade w-60" id="Login_Sign_up" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content" >
+                <button type="button" class="close" style="text-align: right;padding-right: 10px;" data-dismiss="modal">&times;</button><br>
+                <div class="row w-100 no gutters">
+                  <div class="col-sm-6 w-50">
+                    <button class="btn"  style="width:100%;" ng-click="show_login = 1;">LOG IN</button>
+                  </div>
+                  <div class=" col-sm-6 w-50">
+                    <button class="btn" style="width: 100%;" ng-click="show_login = 0";>SIGN UP</button>
+                  </div>
+                </div>
+                    <h4 class="modal-title"></h4>
+                    <div class="modal-body" id="login" ng-show="show_login">
+                        <form name="Login_form">
+                            <div class="form-group" style="color: red;">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" ng-model = "email" class="form-control" placeholder="Email" ng-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd">Password</label>
+                                <input type="password" name="pwd" ng-model = "pass" class="form-control" placeholder="Password" ng-required=true>
+                            </div>
+                            <button style="text-align:center; display: inline-block;" ng-disabled="Login_form.$invalid" data-dismiss="modal" type="submit" ng-click="login();" class="btn btn-primary js-scroll-trigger">Submit</button>
+                        </form>
+                    </div>
+                    <div class="modal-body" id="Signup" ng-hide="show_login">
+                        <form name="Signup_form">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" ng-model = "Name" class="form-control" placeholder="Name" ng-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" ng-model = "Email" class="form-control" placeholder="Email" ng-required=true>
+                            </div>
+                            <div class="form-group">
+                                <label for="college">College</label>
+                                <select name="college" ng-model="college" class="form-control" ng-options="x.name as x.name for x in colleges" placeholder="Select College" ng-required="true">
+                                </select>
+                                <!-- <input type="text" ng-model = "college"class="form-control"> -->
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd">Password:</label>
+                                <input type="password" ng-model = "Password" class="form-control" placeholder="Password" ng-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Referal Code(if any):</label>
+                                <input type="text" name="referal" ng-model="referal" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Phone No.</label>
+                                <input type="number" ng-model ="number" class="form-control" ng-required="true">
+                            </div>
+                            <button style="text-align:center;" data-dismiss="modal" ng-click="signup();"  type="submit" class="btn btn-primary js-scroll-trigger">Submit</button>
+                        </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    <footer class="footer text-center">
+        <div class="container">
+            <ul class="list-inline mb-5">
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white mr-3" href="#">
+              <i class="icon-social-facebook"></i>
+            </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white mr-3" href="#">
+              <i class="icon-social-twitter"></i>
+            </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white" href="#">
+              <i class="icon-social-github"></i>
+            </a>
+                </li>
+            </ul>
+            <p class="text-muted small mb-0">Copyright &copy; Your Website 2018</p>
+        </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="js/stylish-portfolio.min.js"></script>
+</body>
+
+</html>
