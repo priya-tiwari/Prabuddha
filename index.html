@@ -20,12 +20,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular-cookies.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Coustard" rel="stylesheet">
-
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="MyCtrl.js"></script>
-
+</head>
 <style>
-  .typewriter {
+    .typewriter {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: .15em solid orange; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
@@ -69,6 +68,45 @@
     blink-caret .75s step-end infinite;
 }
 
+.image{
+  height: 300px;
+
+}
+#budimage:hover{
+height: 200px;
+transition: 5s;
+}
+hr{
+ display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+/*
+.image{
+   list-style-type: none;
+}*/
+
+ul.images {
+    /*margin: 0;*/
+    /*padding: 0;*/
+    white-space: nowrap;
+    width:100%;
+    height: 300px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    background-color: black;
+    padding-top: 15px;
+  }
+  ul.images li {
+    display: inline;
+    width: 150px;
+    height: 150px;
+  }
+
 /* The typing effect */
 @keyframes typing {
   from { width: 0 }
@@ -82,20 +120,15 @@
 }
 </style>
 
-
-
-
-</head>
-
-<body id="page-top" ng-app="Prabuddha" ng-controller="vm" >
+<body id="page-top" ng-app="Prabuddha" ng-controller="vm">
     <!-- Navigation -->
-      <a class="menu-toggle" href="#" id="menu_tag" style="display: inline-block;" >
+    <a class="menu-toggle" href="#" id="menu_tag" style="display: inline-block;" >
       <i class="fas fa-bars"></i>
     </a>
     <nav id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li class="sidebar-brand">
-                <a class="js-scroll-trigger" href="#page-top">LOGOUT</a>
+                <a class="js-scroll-trigger" ng-show="hidels" ng-click="logout();">LOGOUT</a>
             </li><br><br><br>
             <li class="sidebar-nav-item">
                 <a class="js-scroll-trigger" href="#page-top" >Home</a>
@@ -107,29 +140,47 @@
                 <a class="js-scroll-trigger" href="#portfolio">Events</a>
             </li><br>
             <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#services">Schedule & Rules</a>
+                <a class="js-scroll-trigger" href="#schedule">Schedule & Rules</a>
             </li><br>
             <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#services">Prabuddha 1.0</a>
+                <a class="js-scroll-trigger" href="#Prabuddha1">Prabuddha 1.0</a>
             </li><br>
             <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#contact">Sponsors</a>
+                <a class="js-scroll-trigger" href="#team">Our Team</a>
             </li><br>
             <li class="sidebar-nav-item">
                 <a class="js-scroll-trigger" href="#contact">Contact</a>
-            </li><br><br><br>
-            <li style="padding-top: 110px;">
-              <img src="img/master-logo-file.png" width="250">
             </li>
         </ul>
+        <img style="position: absolute;bottom: 0;left:0" src="img/master-logo-file.png" width="90%" >
+
     </nav>
-    <!-- Header -->
-    <div class="masthead " style="background-attachment: fixed;">
-    <header style="height: 800px;">
+        <!-- Header -->
+        <header class="masthead d-flex">
+            <div class="container text-center ">
+                <div style="padding-top: 14%;"></div>
+                <img  class="animated fadeInDown" src="img/prabu.png" width="70%"><br>
+                <!-- <h1 class="mb-1" style="color:white; padding-top:100px;">PRABUDDHA</h1> -->
+                <div><br><br>
+                    <h4 class="lead mb-1 typewriter" style="color:white;size:1.2em; font:monospace;">
+                  PRABUDDHA, as the name goes is the one who is awakened. Self aware and awoke. We at Quizzinga have
+                </h4>
+                    <h4 class="lead mb-1 typewriter" style="color:white;size:1.2em; font:monospace;">
+                             been true to these words for over a decade. And our continuous dedication for
+                           </h4> <h4 class="lead mb-1 typewriter" style="color:white;size:1.2em; font:monospace;">
+                            our work, hard work and never say never attitude has escaled us in the most
+                          </h4> <h4 class="lead mb-1 typewriter" style="color:white;size:1.2em; font:monospace;">
+                           coveted Quizzing Club in North India"</h4>
+                </div><br>
+
+
+                <button class="btn btn-primary btn-xl js-scroll-trigger" ng-hide="hidels" id="myBtn">LOG IN / SIGN UP</button>
+                <a class="btn btn-primary btn-xl js-scroll-trigger" ng-show="hidels" href="#portfolio" style="font-size: 1.3em;">Welcome {{login_data.name}}</a>
+            </div>
+            <div class="overlay"></div>
+        </header>
+        <!--   <header style="height: 800px;">
         <div class="container text-center">
-            <!-- <h1 class="animated fadeInDown" style="color:white; padding-top:100px;font-family: 'Coustard', serif;text-shadow: 0px 15px 5px rgba(0,0,0,0.1),
-                 10px 20px 5px rgba(249,150,57,0.05),
-                 -10px 20px 5px rgba(249,150,57,0.05);"><img src="img/BUDDHALOGO.png" width="150" style="display:inline-block;vertical-align: top;">PRABUDDHA</h1><br><br> -->
                  <img class="animated fadeInDown" src="img/prabu.png" width="800" height="300"><br>
           
             <div class="typewriter">
@@ -146,339 +197,528 @@
                             
                             has escaled us in the most</h4> <h4 class="lead mb-1" style="color:white;size:1.2em; font:monospace;"> coveted
                             Quizzing Club in North India"</h4>
-        </h4>
       </div><br><br>
-      <!-- </div>   -->
               <button class="btn btn-primary btn-xl js-scroll-trigger heading" ng-hide="hidels" id="myBtn" >LOG IN / SIGN UP</button>      
               <a class="btn btn-primary btn-xl js-scroll-trigger heading" ng-show="hidels" href="#portfolio">LETS PLAY!!</a>      
         </div>
         <div class="overlay"></div>
-    </header>
-    <!-- About -->
-    <section class="content-section" id="about" style="height: 600px;">
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                  <!-- <img src="img/p.jpg"> -->
-                    <h2 class="animated bounceIn infinite slow" style="color:white;">ABOUT<span style="color:rgba(249, 131, 51,0.9);"> QUIZZINGA</span></h2><br>
-                    
-                    <p class="lead mb-5 " style="color:white;">Quizzinga!- The Quiz club of KIET takes pride in
-                                          being one of the most proactive and popular
-                                          clubs among the students of KIET, Ghaziabad.
-                                          Established at the backdrop of a highly successful
-                                          event ‘TechCheck’ , for the college’s tech fest in
-                                          2014, the club has grown tremendously and has
-                                          gathered a huge fan base among the students.
-                                          The main objective of this club is to build the
-                                          quizzing culture among students and to
-                                          encourage their interest in general knowledge
-                                          awareness and to develop the curiosity of
-                                          knowing things in them which is the
-                                          characteristic feature of connecting students with the quizzes. To implement
-                                          this objective,
-
-                                          this club organizes different quizzing events
-                                          throughout the year on different topics like
-                                          History &amp; Politics, Entertainment, General,
-                                          Literature, Sports. In 2016, the club had
-                                          conducted its first Inter-college quizzing fest
-                                          Prabuddha. Each of our quizzes till now had an
-                                          active participation of students and we at
-                                          Quizzinga encourage their participation with
-                                          certificates and exciting prizes to the winners
-                                          and thus implementing our objective.
-                                        </p>
+    </header> -->
+        <div class="modal fade" id="Login_Sign_up" role="dialog" style="background-color:rgba(200, 200, 200,0.2);">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content" style="padding:10px;background-color:rgb(48, 44, 41);color: white;">
+                    <div style="text-align: right;padding-right: 10px;">
+                        <button type="button" class="close" style="color:white" data-dismiss="modal">&times;</button><br>
+                    </div>
+                    <nav>
+                        <ul class="sidebar-na" style="list-style-type: none; text-align: center; padding-right:10%; ">
+                            <li class="sidebar-brand" style="float: left; width: 50%;"><a  class="js-scroll-trigger" ng-click="show_login = 1;">LOGIN</a>
+                            </li>
+                            <li class="sidebar-brand" style="float: left; width:50%;"><a  class="js-scroll-trigger" ng-click="show_login = 0;">SIGN IN</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <h4 class="modal-title"></h4>
+                    <div class="modal-body" id="login">
+                        <form name="Login_form" ng-show="show_login">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="text" name="email" ng-model="email" class="form-control" placeholder="Email" ng-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd">Password</label>
+                                <input type="password" name="pwd" ng-model="pass" class="form-control" placeholder="Password" ng-required=true>
+                            </div><br>
+                            <div class="row">
+                                <div class="col-md-5">
+                                </div>
+                                <button style="text-align:center; display: inline-block;" ng-disabled="Login_form.$invalid" type="submit" ng-click="login();" class="btn btn-primary js-scroll-trigger">Submit</button>
+                                <div class="col-md-7">
+                                </div>
+                            </div>
+                            <a href="#"  id="fmail">Forgot Password?</a>
+                            <a href="#"  id="change">Change Password?</a>
+                        </form>
+                        <form name="Signup_form" ng-hide="show_login">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" ng-model="Name" class="form-control" placeholder="Name" ng-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="text" name="email" ng-model="Email" class="form-control" placeholder="Email" ng-required=true>
+                            </div>
+                            <div class="form-group">
+                                <label for="college">College</label>
+                                <select type="text" name="college" ng-model="college" class="form-control" ng-options="x.name as x.name for x in colleges" placeholder="Select College" ng-required="true">
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd">Password:</label>
+                                <input type="password" name="password" ng-model="Password" class="form-control" placeholder="Password" ng-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Referal Code(if any):</label>
+                                <input type="text" name="referal" ng-model="referal" class="form-control" placeholder="Referal Code">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Phone No.</label>
+                                <input type="number" name="mobile" ng-model="number" class="form-control" ng-required="true">
+                            </div><br>
+                            <div class="row">
+                                <div class="col-md-5">
+                                </div>
+                                <button data-dismiss="modal" ng-disabled="Signup_form.$invalid" ng-click="signup();" type="submit" class="btn btn-primary js-scroll-trigger">Submit</button>
+                            </div>
+                    </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Services -->
-    <!-- Callout -->
-   <!--  <section class="callout">
-        <div class="container text-center">
-            <h2 class="mx-auto mb-5">Welcome to
-          <em>your</em>
-          next website!</h2>
-            <a class="btn btn-primary btn-xl" href="https://startbootstrap.com/template-overviews/stylish-portfolio/">Download Now!</a>
         </div>
-    </section> -->
-    <!-- Portfolio -->
-    <section class="content-section" id="portfolio" style="height: 1000px;">
-        <div class="container">
-            <div class="content-section-heading text-center">
-                <h3 class="text-secondary mb-0">Portfolio</h3>
-                <h2 class="mb-5">EVENTS</h2>
+        <!-- About -->
+        <div class="modal fade" id="forget" role="dialog" style="background-color:rgba(200, 200, 200,0.2);">
+            <div class="modal-dialog" style="opacity: 1;">
+                <!-- Modal content-->
+                <div class="modal-content" style="padding:10px;background-color:rgb(48, 44, 41);color: white;">
+                    <button type="button" class="close" style="text-align: right;padding-right: 10px; " data-dismiss="modal">&times;</button><br>
+                    <h4 class="modal-title"></h4>
+                    <div class="modal-body" id="login">
+                        <form name="forgetpass_form" ng-show="show_login">
+                            <div class="form-group">
+                                <label for="email">Enter Email:</label>
+                                <input type="text" name="email" ng-model="fmail" class="form-control" placeholder="Email" ng-required="true">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5">
+                                </div>
+                                <button ng-disabled="forgetpass_form.$invalid" type="submit" ng-click="forgot_pass();" class="btn btn-primary js-scroll-trigger">Send</button>
+                                <div class="col-md-7">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="row no-gutters" id="port">
-                <div class="col-lg-6" ng-click="Event_Description(1);">
-                    <a class="portfolio-item" href="#">
+        </div>
+        <!-- ///////////////////////////////////////////////////////CHANGE PASSWORD MODAL////////////////////////////////////////////////////////// -->
+        <div class="modal fade" id="change_pass" role="dialog" style="background-color:rgba(200, 200, 200,0.2);">
+            <div class="modal-dialog" >
+                <!-- Modal content-->
+                <div class="modal-content" style="padding:10px;background-color:rgb(48, 44, 41);color: white;">
+                    <button type="button" class="close" style="text-align: right;padding-right: 10px; " data-dismiss="modal">&times;</button><br>
+                    <h4 class="modal-title"></h4>
+                    <div class="modal-body" id="login">
+                        <form name="changepass_form" ng-show="show_login">
+                            <div class="form-group">
+                                <label for="old_pass">Old Password:</label>
+                                <input type="password" name="old_pass" ng-model="old_pass" class="form-control" placeholder="New Password" ng-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="new_pass">New Password:</label>
+                                <input type="password" name="new_pass" ng-model="new_pass" class="form-control" placeholder="Confirm Password" ng-required="true">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                </div>
+                                <div class="col-md-1">
+                                <button ng-disabled="changepass_form.$invalid" type="submit" ng-click="change_pass();" class="btn btn-primary js-scroll-trigger">Change Password</button>
+                              </div>
+                                <div class="col-md-7">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <section class="content-section " id="about">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-lg-10 mx-auto">
+                        <!-- <img src="img/p.jpg"> -->
+                        <h2 "><span style="color:rgba(249, 131, 51,0.9);">About </span>Quizzinga</h2><br>
+                        <p class="lead mb-5">Quizzinga!- The Quiz club of KIET takes pride in
+                            being one of the most proactive and popular
+                            clubs among the students of KIET, Ghaziabad.
+                            Established at the backdrop of a highly successful
+                            event ‘TechCheck’ , for the college’s tech fest in
+                            2014, the club has grown tremendously and has
+                            gathered a huge fan base among the students.
+                            The main objective of this club is to build the
+                            quizzing culture among students and to
+                            encourage their interest in general knowledge
+                            awareness and to develop the curiosity of
+                            knowing things in them which is the
+                            characteristic feature of connecting students with the quizzes. To implement
+                            this objective,
+                            this club organizes different quizzing events
+                            throughout the year on different topics like
+                            History &amp; Politics, Entertainment, General,
+                            Literature, Sports. In 2016, the club had
+                            conducted its first Inter-college quizzing fest
+                            Prabuddha. Each of our quizzes till now had an
+                            active participation of students and we at
+                            Quizzinga encourage their participation with
+                            certificates and exciting prizes to the winners
+                            and thus implementing our objective.
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="content-section" id="portfolio">
+            <div class="container text-center">
+                <h2><span style="color:rgba(249, 131, 51,0.9);">Events </span>Organized</h2><br><br>
+                <div class="content-section-heading ">
+                </div>
+                <div class="row no-gutters" id="port">
+                    <div class="col-lg-6" ng-click="Event_Description(1);">
+                        <a class="portfolio-item" href="#">
               <span class="caption">
                 <span class="caption-content">
-                  <h2>HISTORY & POLITICS QUIZ</h2>
+                  <h3 style="font:monospace; ">HISTORY & POLITICS QUIZ</h3>
                   <span   ng-show="login_data.events.history.event_status== 'NOT REGISTERED'" >REGISTER</span>
                   <span   ng-show="login_data.events.history.event_status== 'REGISTERED'">REGISTERED</span>
                   <span ng-if="login_data.events.history.event_status== 'APPROVED'">
-                    <span  ng-if="login_data.events.history.event_status== 'NOT PAID'">PAY</span>
-                    <span   ng-if="login_data.events.history.event_status== 'NOT PAID'">MORE DETAILS</span>
+                    <span class="btn btn-secondary js-scroll-trigger" ng-if="login_data.events.history.pai_status== 'NOT PAID'">PAY</span>
+                    <span   ng-if="login_data.events.history.pai_status== 'PAID'">MORE DETAILS</span>
                   </span>
                 </span>
               </span>
               <img class="img-fluid" src="img/portfolio-1.jpg" alt="">
             </a>
-                </div>
-                <div class="col-lg-6" ng-click="Event_Description(2);">
-                    <a class="portfolio-item" href="#">
+                    </div>
+                    <div class="col-lg-6" ng-click="Event_Description(2);">
+                        <a class="portfolio-item" href="#">
               <span class="caption">
                 <span class="caption-content">
-                  <h2>SPORT QUIZ</h2>
+                  <h3 style="font:monospace;">SPORT QUIZ</h3>
                   <span   ng-if="login_data.events.sports.event_status== 'NOT REGISTERED'">REGISTER</span>
                   <span   ng-if="login_data.events.sports.event_status== 'REGISTERED'">REGISTERED</span>
                   <span ng-if="login_data.events.sports.event_status== 'APPROVED'">
-                    <span   ng-if="login_data.events.sports.event_status== 'NOT PAID'">PAY</span>
-                    <span   ng-if="login_data.events.sports.event_status== 'NOT PAID'">MORE DETAILS</span>
+                    <span  class="btn btn-secondary js-scroll-trigger" ng-if="login_data.events.sports.pai_status== 'NOT PAID'">PAY</span>
+                    <span   ng-if="login_data.events.sports.pai_status== 'PAID'">MORE DETAILS</span>
                   </span>     
                  </span>
               </span>
               <img class="img-fluid" src="img/portfolio-2.jpg" alt="">
             </a>
-                </div>
-                <div class="col-lg-6" ng-click="Event_Description(3);">
-                    <a class="portfolio-item" href="#">
+                    </div>
+                    <div class="col-lg-6" ng-click="Event_Description(3);">
+                        <a class="portfolio-item" href="#">
               <span class="caption">
                 <span class="caption-content">
-                  <h2>ENTERTAINMENT QUIZ</h2>
+                  <h3 style="font:monospace;">ENTERTAINMENT QUIZ</h3>{{login_data.events.entertainment.event_status}}
                   <span   ng-if="login_data.events.entertainment.event_status== 'NOT REGISTERED'">REGISTER</span>
                   <span  ng-if="login_data.events.entertainment.event_status== 'REGISTERED'">REGISTERED</span>
                   <span ng-if="login_data.events.entertainment.event_status== 'APPROVED'">
-                    <span   ng-if="login_data.events.entertainment.event_status== 'NOT PAID'">PAY</span>
-                    <span   ng-if="login_data.events.entertainment.event_status== 'NOT PAID'">MORE DETAILS</span>
+                    <span class="btn btn-secondary js-scroll-trigger" ng-if="login_data.events.entertainment.pai_status== 'NOT PAID'">PAY</span>
+                    <span   ng-if="login_data.events.entertainment.pai_status== 'PAID'">MORE DETAILS</span>
                   </span> 
                 </span>
               </span>
               <img class="img-fluid" src="img/portfolio-3.jpg" alt="">
             </a>
-                </div>
-                <div class="col-lg-6" ng-click="Event_Description(4 );">
-                    <a class="portfolio-item" href="#">
+                    </div>
+                    <div class="col-lg-6" ng-click="Event_Description(4);">
+                        <a class="portfolio-item" href="#">
               <span class="caption">
                 <span class="caption-content">
-                  <h2>GENERAL QUIZ</h2>
+                  <h3 style="font:monospace;">GENERAL QUIZ</h3>
                   <span   ng-if="login_data.events.general.event_status== 'NOT REGISTERED'">REGISTER</span>
                   <span   ng-if="login_data.events.general.event_status== 'REGISTERED'">REGISTERED</span>
                   <span ng-if="login_data.events.general.event_status== 'APPROVED'">
-                    <span  ng-if="login_data.events.general.event_status== 'NOT PAID'">PAY</span>
-                    <span   ng-if="login_data.events.general.event_status== 'NOT PAID'">MORE DETAILS</span>
+                    <span class="btn btn-secondary js-scroll-trigger" ng-if="login_data.events.general.pai_status== 'NOT PAID'">PAY</span>
+                    <span   ng-if="login_data.events.general.pai_status== 'PAID'">MORE DETAILS</span>
                   </span>                
                 </span>
               </span>
-              <img class="img-fluid" src="img/portfolio-4.PNG" alt="">
+              <img class="img-fluid" src="img/portfolio-6.jpg" alt="">
             </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="content-section  text-white text-center" style="height: 1000px;" id="services">
-        <div class="container">
-            <div class="content-section">
-                <h2 class="text-secondary mb-0">SCHEDULE AND RULES</h3>
-                <h3 class="mb-5">Schedule:-</h2>
-            </div>
-            <div class="typewriter">
-            <ul>
-              <li>History and Politics</li>
-              <li>Sports Quiz</li>
-              <li>Entertainment Quiz</li>
-              <li>General Quiz</li>
-            </ul>
-          </div>
-        </div>
-    </section>
-    <!-- Call to Action -->
-   <!--  <section class="content-section bg-primary text-white">
-        <div class="container text-center">
-            <h2 class="mb-4">The buttons below are impossible to resist...</h2>
-            <a href="#" class="btn btn-xl btn-light mr-4">Click Me!</a>
-            <a href="#" class="btn btn-xl btn-dark">Look at Me!</a>
-        </div>
-    </section> -->
-    <!-- Map -->
-    <section class="content-section bg-primary text-white text-center" style="height: 1000px;" id="services">
-        <div class="container">
-            <div class="content-section-heading">
-                <h3 class="text-secondary mb-0"></h3>
-                <h2 class="mb-5">What We Offer</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                    <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-screen-smartphone"></i>
-            </span>
-                    <h4>
-              <strong>Responsive</strong>
-            </h4>
-                    <p class="text-faded mb-0">Looks great on any screen size!</p>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                    <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-pencil"></i>
-            </span>
-                    <h4>
-              <strong>Redesigned</strong>
-            </h4>
-                    <p class="text-faded mb-0">Freshly redesigned for Bootstrap 4.</p>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
-                    <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-like"></i>
-            </span>
-                    <h4>
-              <strong>Favorited</strong>
-            </h4>
-                    <p class="text-faded mb-0">Millions of users
-                        <i class="fas fa-heart"></i>
-                        Start Bootstrap!</p>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-mustache"></i>
-            </span>
-                    <h4>
-              <strong>Question</strong>
-            </h4>
-                    <p class="text-faded mb-0">I mustache you a question...</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Footer -->
-    <!-- //////////////////////////////////////////////////////////////////////jcjd//////////////////////////////////////////////////////////////// -->
-    <div class="modal fade w-60" id="Description" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content" >
-                <button type="button" class="close" style="text-align: right;padding-right: 10px;" data-dismiss="modal">&times;</button><br>
-                    <h4 class="modal-title"></h4>
-                    <div class="modal-body" id="team" ng-show="show_login">
-                      <h2 style="text-align: center;">{{head}}{{}}</h2><br> 
-                      <div class="container">
-                        <span>{{about}}</span><br>
-                         <!-- <a href="#" class="btn btn-xl btn-light mr-4" ng-click="register()">REGISTER</a> -->
-                        <form name="team" ng-hide="action">
-                            <div class="form-group">
-                                <label for="email">Caption</label>
-                                <input type="text" ng-model="caption" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="pwd">TEAM MATE</label>
-                                <input type="text" ng-model = "team" class="form-control" >
-                            </div>
-                            <div class="checkbox">
-                                <label><input type="checkbox"> Remember me</label>
-                            </div>
-                            <div class="row">
-                              <div class="col-md-6">
-                              </div>
-                              <div class="col-md-6">
-                                <button style="text-align:center;"  data-dismiss="modal" type="submit" ng-click="register(team,event);" class="btn btn-primary js-scroll-trigger">Submit</button>
-                              </div>
-                            </div>
-                        </form>
-                        <span ng-show="action">
-                          <p>TEAM MEMBERS</p>
-                        </span>
-                      </div>
                     </div>
+                </div>
             </div>
-        </div>
+        </section>
+        <!-- Call to Action -->
+        <section class="content-section bg-primary" id="schedule" style="opacity: 0.9;"><strong>
+            <div class="container text-center table-responsive" id="demo">
+                <h2 class="" style="color: white">SCHEDULE</h2><br>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <th>Event</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Date</th>
+                    </thead>
+                    <tbody class="thead-light"><b>
+                        <tr>
+                            <td>History and politics</td>
+                            <td>4:30pm</td>
+                            <td>6:30pm</td>
+                            <td>22<superscript>nd</superscript> February, 2019</td>
+                        </tr>
+                        <tr>
+                            <td>Sports Quiz</td>
+                            <td>10:00am</td>
+                            <td>12:00pm</td>
+                            <td>23<superscript>rd</superscript> February, 2019</td>
+                        </tr>
+                        <tr>
+                            <td>Entertainment Quiz</td>
+                            <td>1:00pm</td>
+                            <td>3:30pm</td>
+                            <td>23<superscript>rd</superscript> February, 2019</td>
+                        </tr>
+                        <tr>
+                            <td>General Quiz</td>
+                            <td>4:00pm</td>
+                            <td>6:30pm</td>
+                            <td>23<superscript>rd</superscript> February, 2019</td>
+                        </tr>
+                    </b></tbody>
+                </table>
+                <h2 class="slow mb-4" style="color: white">RULES</h2><br>
+                    <ul style="text-align: left;font: monospace;font-size: 1.2em;">
+                        <li>Each of the quizzes will be of 2 rounds. </li>
+                        <li>Each team will consist of maximum 2 members each.</li>
+                        <li>Round 1 will be of written type. The questions will be put up on the screen via projector.<br> The participants will write down their answers on the sheet of paper provided by the club.<br> The questions will consist of audio/visual content also.</li>
+                        <li>Round 2 will comprise of the participants who will secure the top 6 scores in Round 1.<br>Round 2 will consist of questions* to each of the team with the options to pounce,bounce and pass available to each team.<br>The winner of the Round 2 will be declared as the winner of the quiz followed by other teams.</li>
+                        <li>Those participants who will be caught using unfair means will be disqualified from the event.</li>
+                      </ul>
+                <!-- <a href="#" class="btn btn-xl btn-light mr-4">Click Me!</a> -->
+                <!-- <a href="#" class="btn btn-xl btn-dark">Look at Me!</a> -->
+            </div></strong>
+        </section>
+        <section style="padding-top:3%;" id="Prabuddha1">
+            <div class="container text-center">
+                <h2 class=" "><span style="color:rgba(249, 131, 51,0.9);">PRABUDDHA</span> 1.0</h2><br>
+            </div>
+            <div class="container text-center">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="col-sm-3">
+                      <p style="align-content: left">The very first event included 6 main and 3 online quizzes across 4 days of
+                          memorable quizzing and nail bitting finishes.<br>Prabuddha 1.0 set a benchmark as it appealed to the curiosity quotient of
+                          every student of the college and the students of other colleges/universities.<br>With the impact that it created, Quizzinga has been constantly striving to bring forward the better and bigger version of the Annual Quizzing Fest of KIET Group of Institutions.<br>
+                          Total Cash Prize Given:INR 45,000.<br>
+                        Total Participation:400+</p>
+                    </div>
+                    <!-- <div class="row"> -->
+                    <!-- <div class="col-lg-10 mx-auto"> -->
+                    <!-- <img src="img/p.jpg"> -->
+                    <div class="col-sm-12">
+                        <img class="p1-image" src="img/p1/p1.jpg">
+                        <!-- <img class=" p1-image" src="img/p1/p2.jpg"> -->
+                        <img class="p1-image" src="img/p1/p3.jpg">
+                        <img class="p1-image" src="img/p1/p4.jpg">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <img class="p1-image" src="img/p1/p5.jpg">
+                            <img class="p1-image" src="img/p1/p6.jpg">
+                            <img class="p1-image" src="img/p1/p7.jpg">
+                          </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <img class="p1-image" src="img/p1/p8.jpg">
+                                <img class="p1-image" src="img/p1/p9.jpg">
+                                <img class="p1-image" src="img/p1/p10.jpg">
+                          </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- </div> -->
+                </div>
+        </section>
+        <section style="padding-top:3%;" id="team" style="background-color: black;">
+            <div class="container text-center">
+                <h2 class="" ><span style="color:rgba(249, 131, 51,0.9);">OUR</span> TEAM</h2><br>
+            </div>
+            <div class="container text-center">
+                <hr>
+                <div class="row" class="card">
+                    <div class="col-sm-12">
+                        <marquee behaviour="slide" direction="left">
+                            <img class="p1-image" src="img/team/3.jpg">
+                            <img class="p1-image" src="img/team/11.png">
+                            <img class="p1-image" src="img/team/4.jpg">
+                            <img class="p1-image" src="img/team/5.jpg">
+                            <img class="p1-image" src="img/team/6.jpg">
+                            <img class="p1-image" src="img/team/7.jpeg">
+                            <img class="p1-image" src="img/team/8.jpg">
+                            <img class="p1-image" src="img/team/1.JPG">
+                            <img class="p1-image" src="img/team/19.jpg">
+                            <img class="p1-image" src="img/team/10.jpg">
+                        </marquee>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            </div>
+            <!-- </div> -->
+            </div>
+        </section>
+        <footer class="content-section bg-primary footer text-center">
+            <div class="container" style="padding-left:5%">
+                <div class="content-section-heading">
+                    <h3 class="text-secondary mb-0"> </h3>
+                    <h3 class="mb-5" style="font:monospace;">Contact Details</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                        <span class="service-icon rounded-circle mx-auto mb-3">
+            </span>
+                        <h4>
+              <strong>HISTORY &amp; POLITICS QUIZ</strong>
+            </h4>
+                        <p class="text-faded mb-0" style="color: black;">Himanshu Mishra - 7800680977</p>
+                        <p class="text-faded mb-0" style="color: black;">Nikunj Gupta;- 8954354494</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                        <span class="service-icon rounded-circle mx-auto mb-3">
+            </span>
+                        <h4>
+              <strong>SPORTS QUIZ</strong>
+            </h4>
+                        <p class="text-faded mb-0" style="color: black;">Shashank Dixit - 9598555536</p>
+                        <p class="text-faded mb-0" style="color: black;">Himanshu Mishra - 7800680977</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                        <span class="service-icon rounded-circle mx-auto mb-3">
+            </span>
+                        <h4>
+              <strong>ENTERTAINMENT QUIZ</strong>
+            </h4>
+                        <p class="text-faded mb-0" style="color: black;">Pragyan pandey - 7579750619</p>
+                        <p class="text-faded mb-0" style="color: black;">Tushar Vaibhav - 7239895129</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <span class="service-icon rounded-circle mx-auto mb-3">
+            </span>
+                        <h4>
+              <strong>GENERAL QUIZ</strong>
+            </h4>
+                        <p class="text-faded mb-0" style="color: black;">Shashank Dixit - 9598555536</p>
+                        <p class="text-faded mb-0" style="color: black;">Saksham Aggarwal - 9045527523</p>
+                    </div>
+                </div>
+                </h3>
+                <div class="container">
+                    <ul class="list-inline mb-5">
+                        <li class="list-inline-item">
+                            <!-- <a class="social-link rounded-circle text-white mr-3" href="#"> -->
+                            <!-- <i class="icon-social-facebook"></i> -->
+    </a>
+    </ul>
+    <p class=" small mb-5"><strong>Developed By Team ERP</strong></p>
     </div>
-      <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// --> 
-      <div class="modal fade w-60" id="Login_Sign_up" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content" >
-                <button type="button" class="close" style="text-align: right;padding-right: 10px;" data-dismiss="modal">&times;</button><br>
-                <div class="row w-100 no gutters">
-                  <div class="col-sm-6 w-50">
-                    <button class="btn"  style="width:100%;" ng-click="show_login = 1;">LOG IN</button>
-                  </div>
-                  <div class=" col-sm-6 w-50">
-                    <button class="btn" style="width: 100%;" ng-click="show_login = 0";>SIGN UP</button>
-                  </div>
-                </div>
-                    <h4 class="modal-title"></h4>
-                    <div class="modal-body" id="login" ng-show="show_login">
-                        <form name="Login_form">
-                            <div class="form-group" style="color: red;">
-                                <label for="email">Email</label>
-                                <input type="email" name="email" ng-model = "email" class="form-control" placeholder="Email" ng-required="true">
-                            </div>
-                            <div class="form-group">
-                                <label for="pwd">Password</label>
-                                <input type="password" name="pwd" ng-model = "pass" class="form-control" placeholder="Password" ng-required=true>
-                            </div>
-                            <button style="text-align:center; display: inline-block;" ng-disabled="Login_form.$invalid" data-dismiss="modal" type="submit" ng-click="login();" class="btn btn-primary js-scroll-trigger">Submit</button>
-                        </form>
-                    </div>
-                    <div class="modal-body" id="Signup" ng-hide="show_login">
-                        <form name="Signup_form">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" name="name" ng-model = "Name" class="form-control" placeholder="Name" ng-required="true">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" name="email" ng-model = "Email" class="form-control" placeholder="Email" ng-required=true>
-                            </div>
-                            <div class="form-group">
-                                <label for="college">College</label>
-                                <select name="college" ng-model="college" class="form-control" ng-options="x.name as x.name for x in colleges" placeholder="Select College" ng-required="true">
-                                </select>
-                                <!-- <input type="text" ng-model = "college"class="form-control"> -->
-                            </div>
-                            <div class="form-group">
-                                <label for="pwd">Password:</label>
-                                <input type="password" ng-model = "Password" class="form-control" placeholder="Password" ng-required="true">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Referal Code(if any):</label>
-                                <input type="text" name="referal" ng-model="referal" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Phone No.</label>
-                                <input type="number" ng-model ="number" class="form-control" ng-required="true">
-                            </div>
-                            <button style="text-align:center;" data-dismiss="modal" ng-click="signup();"  type="submit" class="btn btn-primary js-scroll-trigger">Submit</button>
-                        </form>
-                    </div>
-            </div>
-        </div>
-    </div>
-    <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-    <footer class="footer text-center">
-        <div class="container">
-            <ul class="list-inline mb-5">
-                <li class="list-inline-item">
-                    <a class="social-link rounded-circle text-white mr-3" href="#">
-              <i class="icon-social-facebook"></i>
-            </a>
-                </li>
-                <li class="list-inline-item">
-                    <a class="social-link rounded-circle text-white mr-3" href="#">
-              <i class="icon-social-twitter"></i>
-            </a>
-                </li>
-                <li class="list-inline-item">
-                    <a class="social-link rounded-circle text-white" href="#">
-              <i class="icon-social-github"></i>
-            </a>
-                </li>
-            </ul>
-            <p class="text-muted small mb-0">Copyright &copy; Your Website 2018</p>
-        </div>
     </footer>
     <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+    <!-- <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
       <i class="fas fa-angle-up"></i>
     </a>
+         -->
+    <!-- Footer
+        /////////////////////////////////////////////////////////////jcjd//////////////////////////////////////////////////////////////// -->
+    <div class="modal fade w-60" id="Description" role="dialog" style="background-color:rgba(200, 200, 200,0.2);">
+        <div class="modal-dialog">
+            <div class="modal-content" style="padding:10px;background-color:rgb(48, 44, 41);color: white;">
+                <button type="button" class="close" style="text-align: right;padding-right: 10px;" data-dismiss="modal">&times;</button><br>
+                <h4 class="modal-title"></h4>
+                <div class="modal-body" id="team" ng-show="show_login">
+                    <h2 style="text-align: center;">{{head}}</h2><br>
+                    <div class="container">
+                        <span>{{about}}</span><br><br>
+                        <h6>Contact Details:</h6>
+                        <div ng-if="event == 1">
+                            <p class="text-faded mb-0" style="color: white;">Himanshu Mishra - 7800680977</p>
+                            <p class="text-faded mb-0" style="color: white;">Nikunj Gupta &nbsp;- 8954354494</p>
+                        </div>
+                        <div ng-if="event == 2">
+                            <p class="text-faded mb-0" style="color: white;">Shashank Dixit - 9598555536</p>
+                            <p class="text-faded mb-0" style="color: white;">Himanshu Mishra - 7800680977</p>
+                        </div>
+                        <div ng-if="event == 3">
+                            <p class="text-faded mb-0" style="color: white;">Pragyan pandey - 7579750619</p>
+                            <p class="text-faded mb-0" style="color: white;">Tushar Vaibhav - 7239895129</p>
+                        </div>
+                        <div ng-if="event == 4">
+                            <p class="text-faded mb-0" style="color: white;">Shashank Dixit - 9598555536</p>
+                            <p class="text-faded mb-0" style="color: white;">Saksham Aggarwal - 9045527523</p>
+                        </div><br>
+                        <form name="team" ng-hide="action">
+                        <a href="#" class="btn btn-primary js-scroll-trigger" ng-click="showform = 1">REGISTER</a>
+                            <!-- <p>REGISTER</p> -->
+                            <div ng-show="showform">
+                            <div class="form-group"><br>
+                                <label for="leader">TEAM LEADER</label>
+                                <input type="text" ng-model="leader" class="form-control" ng-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="team">TEAM MATE</label>
+                                <!-- <input type="text" ng-model="team" class="form-control"> -->
+                                <select name="college" ng-model="team" class="form-control" ng-options="x.id as x.name for x in students" placeholder="Select College" ng-required="true">
+                                </select>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                </div>
+                                <div class="col-md-6">
+                                    <button style="text-align:center;" data-dismiss="modal" type="submit" ng-click="register(team,event);" class="btn btn-primary js-scroll-trigger">Submit</button>
+                                </div>
+                            </div>
+                          </div>
+                        </form>
+                        <span ng-show="action">
+                              <div ng-if="form_data.event_status == 'APPROVED'">
+                                <h5>TEAM MEMBERS</h5>
+                                <table class="table">
+                                  <thead class="thead-dark">
+                                    <th>TEAM MEMBER</th>
+                                    <th>STATUS</th>
+                                  </thead>
+                                  <tbody class="thead-light">
+                                    <tr ng-repeat="mem in form_data.team.members">
+                                      <td>{{mem.name}}
+                                      </td>
+                                      <td>{{mem.event_status}}
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <div ng-if="form_data.event_status == 'REGISTERED'">
+                                <h5>REQUESTS</h5>
+                                <table>
+                                  <thead class="thead-dark">
+                                    <th>TEAM MEMBER</th>
+                                    <th>STATUS</th>
+                                    <th>Action</th>
+                                  </thead>
+                                <tbody class="thead-light">
+                                    <tr ng-repeat="mem in form_data.team.members">
+                                      <td>{{mem.name}}
+                                      </td>
+                                      <td>{{mem.event_status}}
+                                      </td>
+                                      <td><button class="btn btn-secondary js-scroll-trigger"  ng-click="approve('REJECTED');">REJECT</button>
+                                          <button class="btn btn-tertiary js-scroll-trigger"  ng-click="approve('APPROVED');">APPROVE</button>
+
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /////////////////////////////////////////////////////////////////////////////////////////// -->
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -486,6 +726,7 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Custom scripts for this template -->
     <script src="js/stylish-portfolio.min.js"></script>
+    <script src="MyCtrl.js"></script>
 </body>
 
 </html>

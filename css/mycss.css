@@ -10,7 +10,23 @@ html {
 }
 
 body {
+
     font-family: 'Source Sans Pro'
+}
+
+.container_img{
+    align-content: center;
+    display: inline-block;
+    padding-left:10%;
+    padding-right:10%;
+
+}
+.p1-image{
+height: 255px;
+/*float: left;*/
+padding: 0.5%;
+max-width: 310px; 
+/*list-style-type: none;*/
 }
 
 .btn-xl {
@@ -33,8 +49,7 @@ body {
     font-size: 1rem;
     text-transform: uppercase
 }
-#about{
-}
+
 h1,
 h2,
 h3,
@@ -42,6 +57,13 @@ h4,
 h5,
 h6 {
     font-weight: 700
+}
+
+
+.form-control:{
+border-color: none;
+box-shadow: none;
+/*box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(255, 100, 255, 0.5);*/
 }
 
 .text-faded {
@@ -102,12 +124,7 @@ h6 {
     background-repeat: no-repeat;
     background-size: cover
 }
-#centerlogo{
-    -webkit-transition:width 2s;
-}
-#centerlogo:hover{
-    width:300px;    
-}
+
 .masthead h1 {
     font-size: 4rem;
     margin: 0;
@@ -160,7 +177,11 @@ h6 {
     color: #fff;
     background: rgba(249, 131, 51,0.9)
 }
-
+.sidebar-na li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(249, 131, 51,0.9)
+}
 .sidebar-nav li a:active,
 .sidebar-nav li a:focus {
     text-decoration: none
@@ -200,7 +221,7 @@ h6 {
     height: 50px;
     text-align: center;
     color: #fff;
-    background: rgba(52, 58, 64, .5);
+    background: rgba(52, 58, 64, .6);
     line-height: 50px;
     z-index: 999
 }
@@ -213,18 +234,26 @@ h6 {
 .menu-toggle:hover {
     background: #343a40
 }
+/*#schedule{
+ position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
 
-.service-icon {
-    background-color: #fff;
-    color: #1d809f;
-    height: 7rem;
-    width: 7rem;
-    display: block;
+  display: block;
+  background-image: url('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_527bf56961712_1.JPG');
+  width: 1200px;
+  height: 800px;
+
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
     line-height: 7.5rem;
     font-size: 2.25rem;
     -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .1);
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .1)
-}
+}*/
 
 .callout {
     padding: 15rem 0;
@@ -248,10 +277,10 @@ li{
 
 }
 li a{
- display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
 }
 li a:hover {
   background-color: #555;
@@ -296,6 +325,33 @@ li a:hover {
     font-size: 1.2rem
 }
 
+#imga {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  display: block;
+  background-image: url("../img/img.jpg");
+  width: 1200px;
+  height: 800px;
+
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+#im {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 @media (min-width:992px) {
     .portfolio-item {
         max-width: none;
@@ -323,12 +379,12 @@ li a:hover {
     }
 
     .portfolio-item:hover img {
-        -webkit-clip-path:inset(32px 32px 45px 31px);
-        clip-path: inset(32px 32px 45px 31px);
+        -webkit-clip-path:inset(32px 32px 50px 32px);
+        clip-path: inset(32px 32px 50px 32px);
     }
 
     .portfolio-item:hover .caption {
-        background-color: rgba(29, 128, 159, 0.5);
+        background-color: rgba(206, 102, 33,0.5);
         -webkit-clip-path: inset(2rem);
         clip-path: inset(2rem)
     }
@@ -358,39 +414,51 @@ footer.footer .social-link:hover {
 }
 
 a {
-    color: #1d809f
+    color: rgb(249, 131, 51)
 }
 
 a:active,
 a:focus,
 a:hover {
-    color: #155d74
+    color: rgb(249, 131, 51)
 }
 
 .btn-primary {
-    background-color: #1d809f !important;
-    border-color: #1d809f !important;
+    background-color: rgb(249, 131, 51) !important;
+    border-color: rgb(249, 131, 51) !important;
     color: #fff !important
 }
 
 .btn-primary:active,
 .btn-primary:focus,
 .btn-primary:hover {
-    background-color: #155d74 !important;
-    border-color: #155d74 !important
+    background-color: rgb(206, 102, 33) !important;
+    border-color: rgb(206, 102, 33) !important
 }
 
 .btn-secondary {
-    background-color: #ecb807 !important;
-    border-color: #ecb807 !important;
+    background-color: rgb(204, 59, 59) !important;
+    border-color: rgb(204, 59, 59) !important;
     color: #fff !important
 }
 
 .btn-secondary:active,
 .btn-secondary:focus,
 .btn-secondary:hover {
-    background-color: #ba9106 !important;
-    border-color: #ba9106 !important
+    background-color: rgb(124, 14, 14) !important;
+    border-color: rgb(124, 14, 14) !important
+}
+.btn-tertiary {
+    background-color: rgb(4, 122, 22) !important;
+    border-color: rgb(4, 122, 22) !important;
+    color: #fff !important
+}
+
+.btn-tertiary:active,
+.btn-tertiary:focus,
+.btn-tertiary:hover {
+    background-color: rgb(8, 81, 20) !important;
+    border-color: rgb(8, 81, 20) !important
 }
 
 .btn-dark {

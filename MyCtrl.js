@@ -3,45 +3,34 @@ app.controller('vm', vm)
 
 function vm($scope, $timeout, $http, $cookies) {
 
+    document.getElementById('menu_tag').click();
+    var base_str = window.location.hostname;
+    var Str = 'http://' + '10.21.66.179' + ':3000';
+
     if ($cookies.get('token') != undefined && $cookies.get('token') != null && $cookies.get('token') != null) {
+        var authHeader={}
+        if($cookies.get('token')){
+            authHeader.Authorization='Bearer '+$cookies.get('token')
+        }
         $http({
-            method: "GET",
-            url: Str + '/api/user',
+            method: "POST",
+            url: Str + '/api/user/refresh',
             // data: $scope.params,
-            headers: {
-                'Cookie': $cookies.get('token'),
-            },
-            withCredentials: true
+            headers: authHeader,
+            // withCredentials: false
         }).then(function(response) {
-            console.log(response);
             // ResponseCheck.ResponseStatus(response);
             $scope.login_data = response.data.user;
             console.log($scope.login_data);
             $scope.cook = response.data.user.token;
             $scope.hidels = 1;
+            console.log($scope.login_data.name);
             // if(response.user[0].token != undefined );
 
         }).catch(function(response) {
-            // ResponseCheck.ResponseStatus(response);
-            //    if(response != null || response != undefined){
-            //     if (response.status != 200) {
-            //         alert('');
-            //         $scope.errors = response.data.errors;
-            //         console.log($scope.errors[Object.keys($scope.errors)[0]]);
-            //         $scope.d = Object.keys($scope.errors)[0];
-            //         console.log();
-            //         $scope.e = $scope.d.toUpperCase() + " " + $scope.errors[Object.keys($scope.errors)[0]].toUpperCase();
-            //         console.log($scope.e);
-            //         swal("ERROR", $scope.e, "error");
-            //     }
-            // }
         });
     }
 
-
-    document.getElementById('menu_tag').click();
-    var base_str = window.location.hostname;
-    var Str = 'http://' + '10.21.66.16' + ':3000';
 
     console.log(Str);
     $scope.caption = "";
@@ -49,7 +38,8 @@ function vm($scope, $timeout, $http, $cookies) {
     $scope.mem = [];
     $scope.show_login = 1;
     $scope.form_data = "";
-    $scope.action = "";
+    $scope.action = 0;
+    $scope.contact_details = "";
     $scope.hidels = 0;
     $scope.event1 = ""
     $scope.username = "";
@@ -67,6 +57,7 @@ function vm($scope, $timeout, $http, $cookies) {
     });
 
 
+
     $http({
         method: "GET",
         url: Str + '/api/events/college/',
@@ -82,6 +73,20 @@ function vm($scope, $timeout, $http, $cookies) {
             });
         });
     });
+    promise1.then(function(value) {
+        $(document).ready(function() {
+            $("#change").click(function() {
+                $("#change_pass").modal();
+            });
+        });
+    });
+    promise1.then(function(value) {
+        $(document).ready(function() {
+            $("#fmail").click(function() {
+                $("#forget").modal();
+            });
+        });
+    });
 
     promise1.then(function(value) {
         $(document).ready(function() {
@@ -91,7 +96,70 @@ function vm($scope, $timeout, $http, $cookies) {
         });
     });
 
+    $scope.forgot_pass = function(){
+        console.log($scope.fmail);
+        $scope.forgot_mail = {  "users":{
+            "email": $scope.fmail
+        }}
+        console.log($scope.forgot_mail);
+        $http({
+            method: "POST",
+            url: Str + '/api/users/forget/',
+            data: $scope.forgot_mail,
+            // withCredentials: false
+        }).then(function(response) {
+            console.log(response);
+          swal('New Password has been sent to your Email Id');
+
+        }).catch(function(response) {
+
+        });
+    }
+
+    $scope.change_pass = function(){
+        var authHeader={}
+        if($cookies.get('token')){
+            authHeader.Authorization='Bearer '+$cookies.get('token')
+        }
+        console.log($scope.c_pass);
+        console.log($scope.new_pass);
+        // if($scope.c_pass != $scope.new_pass){
+        //     swal("warning","Passwords do not match","warning");
+        //     return;
+        // }
+        console.log();
+        $scope.email1 = $scope.login_data.email;
+        $scope.change_pass_data = {    "user":{
+            'email': $scope.email1,
+            'new_password':$scope.new_pass,
+            'password':$scope.old_pass
+        }
+        };
+        console.log($scope.change_pass_data);
+        $http({
+            method: "POST",
+            url: Str + '/api/users/change/',
+            data: $scope.change_pass_data,
+            headers: authHeader
+
+            // withCredentials: false
+        }).then(function(response) {
+            console.log(response);
+          swal("success","Password Changed Successfully","success");
+
+        }).catch(function(response) {
+
+        });
+
+    }
+
     $scope.login = function() {
+        console.log($scope.email);
+        if(!$scope.checkemail($scope.email))
+        {
+           swal("Email invalid","","warning");
+           return;
+        } 
         $scope.params = {
             "user": {
                 'email': $scope.email,
@@ -112,34 +180,60 @@ function vm($scope, $timeout, $http, $cookies) {
             // ResponseCheck.ResponseStatus(response);
             $scope.login_data = response.data.user;
             console.log($scope.login_data)
+            $scope.leader = $scope.login_data.name;
             $cookies.put('token', $scope.login_data.token);
-            $scope.cook = response.data.user.token;
             $scope.hidels = 1;
+            // $scope.caption = 
+
             // if(response.user[0].token != undefined );
         }).catch(function(response) {
-            // ResponseCheck.ResponseStatus(response);
-            //    if(response != null || response != undefined){
-            //     if (response.status != 200) {
-            //         alert('');
-            //         $scope.errors = response.data.errors;
-            //         console.log($scope.errors[Object.keys($scope.errors)[0]]);
-            //         $scope.d = Object.keys($scope.errors)[0];
-            //         console.log();
-            //         $scope.e = $scope.d.toUpperCase() + " " + $scope.errors[Object.keys($scope.errors)[0]].toUpperCase();
-            //         console.log($scope.e);
-            //         swal("ERROR", $scope.e, "error");
-            //     }
-            // }
+            console.log(response);
+                if (response.status != 200) {
+                    
+                    swal("ERROR", "Email is already registered", "error");
+                }
         });
     }
 
+    $scope.checkemail = function(mail)
+    {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(mail.toLowerCase());
+    }
+
     $scope.logout = function() {
+        $http({
+            method: "POST",
+            url: Str + '/api/logout/',
+            // data: $scope.params,
+            headers: {
+                'Cookie': $cookies.get('token'),
+            },
+            // withCredentials: false
+        }).then(function(response) {
+            console.log(response);
+            // ResponseCheck.ResponseStatus(response);
+            $scope.login_data = response.data.user;
+            console.log($scope.login_data)
+            $cookies.put('token', $scope.login_data.token);
+            $scope.cook = response.data.user.token;
+            $scope.hidels = 0;
+            // if(response.user[0].token != undefined );
+        }).catch(function(response) {
+        });
     }
 
     $scope.signup = function() {
-        if ($scope.Name == undefined || $scope.Name == null) {
-            // swal("ERROR","Name Cant")
+        if(!$scope.checkemail($scope.Email))
+        {
+           swal("Email invalid","","warning");
+           return;
         }
+        // console.log($scope.number.length);
+        // if($scope.number.length != 10){
+        //     swal("error","INVALID PHONE NUMBER","error")
+        //     return
+        // }
         $scope.data = {
             "user": {
                 "name": $scope.Name,
@@ -159,6 +253,13 @@ function vm($scope, $timeout, $http, $cookies) {
         }).then(function(response) {
             // ResponseCheck.ResponseStatus(response);
             // $log.log(response);
+            $scope.username = "";
+            $scope.referal = "";
+            $scope.password = "";
+            $scope.number = 0;
+            $scope.name = "";
+            $scope.email = "";
+            $scope.college = "";
         }).catch(function(response) {
             if (response.status == 422) {
                 swal("WARNING", "Email is already registered", "warning");
@@ -174,12 +275,14 @@ function vm($scope, $timeout, $http, $cookies) {
                 $scope.form_data = $scope.login_data.events.history;
                 $scope.event1 = "history";
                 $scope.action = 0;
-                if ($scope.form_data.event_status == 'REGISTERED') {
+                if ($scope.form_data.event_status == 'REGISTERED'|| $scope.form_data.event_status == 'APPROVED') {
                     $scope.action = 1;
                 }
                 console.log($scope.form_data);
+                console.log($scope.action); 
             }
             $scope.head = "History and politics";
+            $scope.contact_detail = "";
             $scope.about = "The curtain raiser is loaded with topics covering from Swadeshi Movement to Cold War, Battles all round the world and theories of the infamous assasinations.From the whom and who&#39;s of the political world to the Great Wall, you need to know it all to ace the pack of enthusiasts attending this quiz.";
         }
         if (k == 2) {
@@ -187,7 +290,7 @@ function vm($scope, $timeout, $http, $cookies) {
                 $scope.form_data = $scope.login_data.events.sports;
                 $scope.action = 0;
                 $scope.event1 = "sports";
-                if ($scope.form_data.event_status == 'REGISTERED') {
+                if ($scope.form_data.event_status == 'REGISTERED' || $scope.form_data.event_status == 'APPROVED') {
                     $scope.action = 1;
                 }
             }
@@ -199,7 +302,9 @@ function vm($scope, $timeout, $http, $cookies) {
                 $scope.form_data = $scope.login_data.events.entertainment;
                 $scope.action = 0;
                 $scope.event1 = "entertainment";
-                if ($scope.form_data.event_status == 'REGISTERED') {}
+                if ($scope.form_data.event_status == 'REGISTERED' || $scope.form_data.event_status == 'APPROVED') {
+                    $scope.action = 1;
+                }
                 $scope.regis = 1;
             }
             $scope.head = "Entertainment Quiz";
@@ -210,7 +315,7 @@ function vm($scope, $timeout, $http, $cookies) {
                 $scope.form_data = $scope.login_data.events.history;
                 $scope.action = 0;
                 $scope.event1 = "history";
-                if ($scope.form_data.event_status == 'REGISTERED') {
+                if ($scope.form_data.event_status == 'REGISTERED' || $scope.form_data.event_status == 'APPROVED') {
                     $scope.action = 1;
                 }
             }
@@ -224,7 +329,6 @@ function vm($scope, $timeout, $http, $cookies) {
         }
         var authHeader={}
         if($cookies.get('token')){
-            alert()
             authHeader.Authorization='Bearer '+$cookies.get('token')
         }
         $scope.x = {Authorization:$cookies.get('token')}
@@ -234,8 +338,9 @@ function vm($scope, $timeout, $http, $cookies) {
             url: Str + '/api/events/student',
             params:$scope.reg, 
             headers: authHeader,
-            withCredentials: false
+            // withCredentials: false
         }).then(function(response) {
+            $scope.students = response.data.stu;
             // ResponseCheck.ResponseStatus(response);
             console.log(response);
             // vm.login_data = response.data.user;
@@ -264,28 +369,60 @@ function vm($scope, $timeout, $http, $cookies) {
 
     }
 
+
     $scope.register = function(member, eve) {
         var authHeader={}
         if($cookies.get('token')){
             authHeader.Authorization='Bearer '+$cookies.get('token')
         }
         $scope.mem[0] = member;
-        // console.log($scope.mem);
+        console.log(authHeader);
         $scope.reg = {
-            'events': eve,
+            'events': $scope.event1,
             'members': $scope.mem
         }
-        // console.log(authHeader);
+        console.log($scope.reg);
         $http({
             method: "POST",
             url: Str + '/api/events/register',
             data: $scope.reg,
             headers: authHeader,
-            withCredentials: true
+            withCredentials: false
         }).then(function(response) {
             // ResponseCheck.ResponseStatus(response);
             console.log(response);
-            vm.login_data = response.data.user;
+            $scope.login_data = response.data.user;
+            swal("REGISTERED",'success')
+
+        }).catch(function(response) {
+            // ResponseCheck.ResponseStatus(response);
+        });
+    }
+
+        $scope.approve = function(status) {
+            console.log()
+        var authHeader={}
+        if($cookies.get('token')){
+            authHeader.Authorization='Bearer '+$cookies.get('token')
+        }
+        // $scope.mem[0] = member;
+        console.log(authHeader);
+        $scope.status = {
+            'events': $scope.event1,
+            'approval_status':status
+        }
+        console.log($scope.status);
+        $http({
+            method: "POST",
+            url: Str + '/api/events/approve',
+            data: $scope.status,
+            headers: authHeader,
+            withCredentials: false
+        }).then(function(response) {
+            // ResponseCheck.ResponseStatus(response);
+            console.log(response);
+            $scope.login_data = response.data.user;
+            swal("REGISTERED",'success')
 
         }).catch(function(response) {
             // ResponseCheck.ResponseStatus(response);
