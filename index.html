@@ -562,58 +562,9 @@ ul.images {
             </div>
         </section>
         <footer class="content-section bg-primary footer text-center">
-            <div class="container" style="padding-left:5%">
-                <div class="content-section-heading">
-                    <h3 class="text-secondary mb-0"> </h3>
-                    <h3 class="mb-5" style="font:monospace;">Contact Details</h3>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                        <span class="service-icon rounded-circle mx-auto mb-3">
-            </span>
-                        <h4>
-              <strong>HISTORY &amp; POLITICS QUIZ</strong>
-            </h4>
-                        <p class="text-faded mb-0" style="color: black;">Himanshu Mishra - 7800680977</p>
-                        <p class="text-faded mb-0" style="color: black;">Nikunj Gupta;- 8954354494</p>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                        <span class="service-icon rounded-circle mx-auto mb-3">
-            </span>
-                        <h4>
-              <strong>SPORTS QUIZ</strong>
-            </h4>
-                        <p class="text-faded mb-0" style="color: black;">Shashank Dixit - 9598555536</p>
-                        <p class="text-faded mb-0" style="color: black;">Himanshu Mishra - 7800680977</p>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
-                        <span class="service-icon rounded-circle mx-auto mb-3">
-            </span>
-                        <h4>
-              <strong>ENTERTAINMENT QUIZ</strong>
-            </h4>
-                        <p class="text-faded mb-0" style="color: black;">Pragyan pandey - 7579750619</p>
-                        <p class="text-faded mb-0" style="color: black;">Tushar Vaibhav - 7239895129</p>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <span class="service-icon rounded-circle mx-auto mb-3">
-            </span>
-                        <h4>
-              <strong>GENERAL QUIZ</strong>
-            </h4>
-                        <p class="text-faded mb-0" style="color: black;">Shashank Dixit - 9598555536</p>
-                        <p class="text-faded mb-0" style="color: black;">Saksham Aggarwal - 9045527523</p>
-                    </div>
-                </div>
-                </h3>
-                <div class="container">
-                    <ul class="list-inline mb-5">
-                        <li class="list-inline-item">
-                            <!-- <a class="social-link rounded-circle text-white mr-3" href="#"> -->
-                            <!-- <i class="icon-social-facebook"></i> -->
-    </a>
+            
     </ul>
-    <p class=" small mb-5"><strong>Developed By Team ERP</strong></p>
+    <p class=" small mb-5"><strong>Developed By Priya Tiwari</strong></p>
     </div>
     </footer>
     <!-- Scroll to Top Button-->
@@ -623,101 +574,7 @@ ul.images {
          -->
     <!-- Footer
         /////////////////////////////////////////////////////////////jcjd//////////////////////////////////////////////////////////////// -->
-    <div class="modal fade w-60" id="Description" role="dialog" style="background-color:rgba(200, 200, 200,0.2);">
-        <div class="modal-dialog">
-            <div class="modal-content" style="padding:10px;background-color:rgb(48, 44, 41);color: white;">
-                <button type="button" class="close" style="text-align: right;padding-right: 10px;" data-dismiss="modal">&times;</button><br>
-                <h4 class="modal-title"></h4>
-                <div class="modal-body" id="team" ng-show="show_login">
-                    <h2 style="text-align: center;">{{head}}</h2><br>
-                    <div class="container">
-                        <span>{{about}}</span><br><br>
-                        <h6>Contact Details:</h6>
-                        <div ng-if="event == 1">
-                            <p class="text-faded mb-0" style="color: white;">Himanshu Mishra - 7800680977</p>
-                            <p class="text-faded mb-0" style="color: white;">Nikunj Gupta &nbsp;- 8954354494</p>
-                        </div>
-                        <div ng-if="event == 2">
-                            <p class="text-faded mb-0" style="color: white;">Shashank Dixit - 9598555536</p>
-                            <p class="text-faded mb-0" style="color: white;">Himanshu Mishra - 7800680977</p>
-                        </div>
-                        <div ng-if="event == 3">
-                            <p class="text-faded mb-0" style="color: white;">Pragyan pandey - 7579750619</p>
-                            <p class="text-faded mb-0" style="color: white;">Tushar Vaibhav - 7239895129</p>
-                        </div>
-                        <div ng-if="event == 4">
-                            <p class="text-faded mb-0" style="color: white;">Shashank Dixit - 9598555536</p>
-                            <p class="text-faded mb-0" style="color: white;">Saksham Aggarwal - 9045527523</p>
-                        </div><br>
-                        <form name="team" ng-hide="action">
-                        <a href="#" class="btn btn-primary js-scroll-trigger" ng-click="showform = 1">REGISTER</a>
-                            <!-- <p>REGISTER</p> -->
-                            <div ng-show="showform">
-                            <div class="form-group"><br>
-                                <label for="leader">TEAM LEADER</label>
-                                <input type="text" ng-model="leader" class="form-control" ng-required="true">
-                            </div>
-                            <div class="form-group">
-                                <label for="team">TEAM MATE</label>
-                                <!-- <input type="text" ng-model="team" class="form-control"> -->
-                                <select name="college" ng-model="team" class="form-control" ng-options="x.id as x.name for x in students" placeholder="Select College" ng-required="true">
-                                </select>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                </div>
-                                <div class="col-md-6">
-                                    <button style="text-align:center;" data-dismiss="modal" type="submit" ng-click="register(team,event);" class="btn btn-primary js-scroll-trigger">Submit</button>
-                                </div>
-                            </div>
-                          </div>
-                        </form>
-                        <span ng-show="action">
-                              <div ng-if="form_data.event_status == 'APPROVED'">
-                                <h5>TEAM MEMBERS</h5>
-                                <table class="table">
-                                  <thead class="thead-dark">
-                                    <th>TEAM MEMBER</th>
-                                    <th>STATUS</th>
-                                  </thead>
-                                  <tbody class="thead-light">
-                                    <tr ng-repeat="mem in form_data.team.members">
-                                      <td>{{mem.name}}
-                                      </td>
-                                      <td>{{mem.event_status}}
-                                      </td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </div>
-                              <div ng-if="form_data.event_status == 'REGISTERED'">
-                                <h5>REQUESTS</h5>
-                                <table>
-                                  <thead class="thead-dark">
-                                    <th>TEAM MEMBER</th>
-                                    <th>STATUS</th>
-                                    <th>Action</th>
-                                  </thead>
-                                <tbody class="thead-light">
-                                    <tr ng-repeat="mem in form_data.team.members">
-                                      <td>{{mem.name}}
-                                      </td>
-                                      <td>{{mem.event_status}}
-                                      </td>
-                                      <td><button class="btn btn-secondary js-scroll-trigger"  ng-click="approve('REJECTED');">REJECT</button>
-                                          <button class="btn btn-tertiary js-scroll-trigger"  ng-click="approve('APPROVED');">APPROVE</button>
-
-                                      </td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </div>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+   
     <!-- /////////////////////////////////////////////////////////////////////////////////////////// -->
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
